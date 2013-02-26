@@ -1,0 +1,35 @@
+{
+	"type":"object",
+	"$schema": "http://json-schema.org/draft-03/schema",
+	"title": "circularArea",
+	"id": "#",
+	"required":true,
+	"properties":{
+		"center": {
+			"type":"object",
+			"id": "center",
+			"required":true,
+			"properties":{
+				"lat": {
+					"type":"number",
+					"title": "Latitude",
+					"id": "lat",
+					"required":true
+				},
+				"long": {
+					"type":"number",
+					"title": "Longitude",
+					"id": "long",
+					"required":true
+				}
+			}
+		},
+		"radius": {
+			"type":"number",
+			"title": "Radius",
+			"description": "The radios of the circular area in km.",
+			"id": "radius",
+			"required":true
+		}
+	}
+}

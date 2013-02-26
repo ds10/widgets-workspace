@@ -1,0 +1,388 @@
+{
+	"completed_in": 0.026,
+	"max_id": 258846089875177472,
+	"max_id_str": "258846089875177472",
+	"next_page": "?page=2&max_id=258846089875177472&q=flood&include_entities=1",
+	"page": 1,
+	"query": "flood",
+	"refresh_url": "?since_id=258846089875177472&q=flood&include_entities=1",
+	"results": [
+		{
+			"created_at": "Thu, 18 Oct 2012 08:24:51 +0000",
+			"entities": {
+				"hashtags": [],
+				"urls": [],
+				"user_mentions": [
+					{
+						"screen_name": "kirknorthdevon",
+						"name": "Kirk England",
+						"id": 342109686,
+						"id_str": "342109686",
+						"indices": [3, 18]
+					}, {
+						"screen_name": "gmd",
+						"name": "Good Morning Devon",
+						"id": 15379563,
+						"id_str": "15379563",
+						"indices": [116, 120]
+					}
+				],
+				"media": [
+					{
+						"id": 258830998660325376,
+						"id_str": "258830998660325376",
+						"indices": [121, 141],
+						"media_url": "http:\/\/p.twimg.com\/A5eNbAQCIAAcL8z.jpg",
+						"media_url_https": "https:\/\/p.twimg.com\/A5eNbAQCIAAcL8z.jpg",
+						"url": "http:\/\/t.co\/aABKpebK",
+						"display_url": "pic.twitter.com\/aABKpebK",
+						"expanded_url": "http:\/\/twitter.com\/kirknorthdevon\/status\/258830998656131072\/photo\/1",
+						"type": "photo",
+						"sizes": {
+							"medium": {
+								"w": 600,
+								"h": 450,
+								"resize": "fit"
+							},
+							"thumb": {
+								"w": 150,
+								"h": 150,
+								"resize": "crop"
+							},
+							"small": {
+								"w": 340,
+								"h": 255,
+								"resize": "fit"
+							},
+							"orig": {
+								"w": 960,
+								"h": 720,
+								"resize": "fit"
+							},
+							"large": {
+								"w": 960,
+								"h": 720,
+								"resize": "fit"
+							}
+						}
+					}
+				]
+			},
+			"from_user": "NDTransition",
+			"from_user_id": 845997631,
+			"from_user_id_str": "845997631",
+			"from_user_name": "NDTF",
+			"geo": null,
+			"id": 258846089875177472,
+			"id_str": "258846089875177472",
+			"iso_language_code": "en",
+			"metadata": {
+				"result_type": "recent"
+			},
+			"profile_image_url": "http:\/\/a0.twimg.com\/profile_images\/2679531733\/432f89c0402a017547e88a3c214c1773_normal.png",
+			"profile_image_url_https": "https:\/\/si0.twimg.com\/profile_images\/2679531733\/432f89c0402a017547e88a3c214c1773_normal.png",
+			"source": "&lt;a href=&quot;http:\/\/twitter.com\/&quot;&gt;web&lt;\/a&gt;",
+			"text": "RT @kirknorthdevon: As high tide approaches people in Dresden are on standby for Schlossplatz to flood again. More @gmd http:\/\/t.co\/aABKpebK",
+			"to_user": null,
+			"to_user_id": 0,
+			"to_user_id_str": "0",
+			"to_user_name": null
+		}, {
+			"created_at": "Thu, 18 Oct 2012 08:24:17 +0000",
+			"entities": {
+				"hashtags": [],
+				"urls": [
+					{
+						"url": "http:\/\/t.co\/BnEKmJnP",
+						"expanded_url": "http:\/\/bbc.in\/XrAstp",
+						"display_url": "bbc.in\/XrAstp",
+						"indices": [101, 121]
+					}
+				],
+				"user_mentions": []
+			},
+			"from_user": "BBCYork",
+			"from_user_id": 83388766,
+			"from_user_id_str": "83388766",
+			"from_user_name": "BBC York & N. Yorks",
+			"geo": null,
+			"id": 258845946107023360,
+			"id_str": "258845946107023360",
+			"iso_language_code": "en",
+			"metadata": {
+				"result_type": "recent"
+			},
+			"profile_image_url": "http:\/\/a0.twimg.com\/profile_images\/1082864274\/twitter_york73x73_normal.gif",
+			"profile_image_url_https": "https:\/\/si0.twimg.com\/profile_images\/1082864274\/twitter_york73x73_normal.gif",
+			"source": "&lt;a href=&quot;http:\/\/twitterfeed.com&quot;&gt;twitterfeed&lt;\/a&gt;",
+			"text": "Flood defence scheme completed: A multi-million euros flood protection scheme in Dresden is completed. http:\/\/t.co\/BnEKmJnP",
+			"to_user": null,
+			"to_user_id": 0,
+			"to_user_id_str": "0",
+			"to_user_name": null
+		}, {
+			"created_at": "Thu, 18 Oct 2012 08:23:20 +0000",
+			"entities": {
+				"hashtags": [
+					{
+						"text": "scared",
+						"indices": [87, 94]
+					}, {
+						"text": "flood",
+						"indices": [95, 101]
+					}
+				],
+				"urls": [],
+				"user_mentions": []
+			},
+			"from_user": "DBond5",
+			"from_user_id": 205185772,
+			"from_user_id_str": "205185772",
+			"from_user_name": "Davey B",
+			"geo": null,
+			"id": 258845706884882432,
+			"id_str": "258845706884882432",
+			"iso_language_code": "en",
+			"metadata": {
+				"result_type": "recent"
+			},
+			"profile_image_url": "http:\/\/a0.twimg.com\/profile_images\/2435670828\/image_normal.jpg",
+			"profile_image_url_https": "https:\/\/si0.twimg.com\/profile_images\/2435670828\/image_normal.jpg",
+			"source": "&lt;a href=&quot;http:\/\/twitter.com\/&quot;&gt;web&lt;\/a&gt;",
+			"text": "I'm still yet to find out the damage the rain did to the inside of my motor last night #scared #flood",
+			"to_user": null,
+			"to_user_id": 0,
+			"to_user_id_str": "0",
+			"to_user_name": null
+		}, {
+			"created_at": "Thu, 18 Oct 2012 08:23:00 +0000",
+			"entities": {
+				"hashtags": [],
+				"urls": [],
+				"user_mentions": []
+			},
+			"from_user": "phuongaff",
+			"from_user_id": 595062500,
+			"from_user_id_str": "595062500",
+			"from_user_name": "Phuong Watts",
+			"geo": null,
+			"id": 258845622587764736,
+			"id_str": "258845622587764736",
+			"iso_language_code": "en",
+			"metadata": {
+				"result_type": "recent"
+			},
+			"profile_image_url": "http:\/\/a0.twimg.com\/profile_images\/2279488552\/xfvog3xi5zu8b4zheujw_normal.jpeg",
+			"profile_image_url_https": "https:\/\/si0.twimg.com\/profile_images\/2279488552\/xfvog3xi5zu8b4zheujw_normal.jpeg",
+			"source": "&lt;a href=&quot;http:\/\/twitter.com\/&quot;&gt;web&lt;\/a&gt;",
+			"text": "Crazy Day ; I wish this whole town would flood for real just so school will be canceled..",
+			"to_user": null,
+			"to_user_id": 0,
+			"to_user_id_str": "0",
+			"to_user_name": null
+		}, {
+			"created_at": "Thu, 18 Oct 2012 08:55:47 +0000",
+			"entities": {
+				"hashtags": [],
+				"urls": [
+					{
+						"url": "http:\/\/t.co\/7u0yOUF6",
+						"expanded_url": "http:\/\/www.environment-agency.gov.uk\/homeandleisure\/floods\/34678.aspx?type=Region&term=Anglian",
+						"display_url": "environment-agency.gov.uk\/homeandleisure\u2026",
+						"indices": [119, 139]
+					}
+				],
+				"user_mentions": []
+			},
+			"from_user": "EnvAgencyAnglia",
+			"from_user_id": 252541548,
+			"from_user_id_str": "252541548",
+			"from_user_name": "EnvAgencyAnglian",
+			"geo": null,
+			"id": 258853872976674816,
+			"id_str": "258853872976674816",
+			"iso_language_code": "en",
+			"metadata": {
+				"result_type": "recent"
+			},
+			"profile_image_url": "http:\/\/a0.twimg.com\/profile_images\/2720937181\/4a2e377706eb50d9904770b1d69ad8f1_normal.png",
+			"profile_image_url_https": "https:\/\/si0.twimg.com\/profile_images\/2720937181\/4a2e377706eb50d9904770b1d69ad8f1_normal.png",
+			"source": "&lt;a href=&quot;http:\/\/twitter.com\/&quot;&gt;web&lt;\/a&gt;",
+			"text": "Those figures are across the whole of eastern Germany. In Saxony there are 8 flood alerts, which you can read about at http:\/\/t.co\/7u0yOUF6",
+			"to_user": null,
+			"to_user_id": 0,
+			"to_user_id_str": "0",
+			"to_user_name": null
+		},{
+			"created_at": "Thu, 18 Oct 2012 08:55:42 +0000",
+			"entities": {
+				"hashtags": [],
+				"urls": [],
+				"user_mentions": [],
+				"media": [
+					{
+						"id": 258853849069154304,
+						"id_str": "258853849069154304",
+						"indices": [60, 80],
+						"media_url": "http:\/\/p.twimg.com\/A5eiNEqCcAARR1t.jpg",
+						"media_url_https": "https:\/\/p.twimg.com\/A5eiNEqCcAARR1t.jpg",
+						"url": "http:\/\/t.co\/0OKmEe4e",
+						"display_url": "pic.twitter.com\/0OKmEe4e",
+						"expanded_url": "http:\/\/twitter.com\/DuncanDraws\/status\/258853849060765696\/photo\/1",
+						"type": "photo",
+						"sizes": {
+							"medium": {
+								"w": 600,
+								"h": 600,
+								"resize": "fit"
+							},
+							"thumb": {
+								"w": 150,
+								"h": 150,
+								"resize": "crop"
+							},
+							"orig": {
+								"w": 720,
+								"h": 720,
+								"resize": "fit"
+							},
+							"small": {
+								"w": 340,
+								"h": 340,
+								"resize": "fit"
+							},
+							"large": {
+								"w": 720,
+								"h": 720,
+								"resize": "fit"
+							}
+						}
+					}
+				]
+			},
+			"from_user": "DuncanDraws",
+			"from_user_id": 295222532,
+			"from_user_id_str": "295222532",
+			"from_user_name": "Duncan Beedie",
+			"geo": null,
+			"id": 258853849060765696,
+			"id_str": "258853849060765696",
+			"iso_language_code": "en",
+			"metadata": {
+				"result_type": "recent"
+			},
+			"profile_image_url": "http:\/\/a0.twimg.com\/profile_images\/2225796835\/oldTimer_normal.jpg",
+			"profile_image_url_https": "https:\/\/si0.twimg.com\/profile_images\/2225796835\/oldTimer_normal.jpg",
+			"source": "&lt;a href=&quot;http:\/\/twitter.com\/download\/android&quot;&gt;Twitter for Android&lt;\/a&gt;",
+			"text": "So the flood levels haven't quite reached the studio...yet! http:\/\/t.co\/0OKmEe4e",
+			"to_user": null,
+			"to_user_id": 0,
+			"to_user_id_str": "0",
+			"to_user_name": null
+		}, {
+			"created_at": "Thu, 18 Oct 2012 08:55:07 +0000",
+			"entities": {
+				"hashtags": [],
+				"urls": [],
+				"user_mentions": []
+			},
+			"from_user": "Securityrespons",
+			"from_user_id": 241277992,
+			"from_user_id_str": "241277992",
+			"from_user_name": "Security Response UK",
+			"geo": null,
+			"id": 258853706328592384,
+			"id_str": "258853706328592384",
+			"iso_language_code": "en",
+			"metadata": {
+				"result_type": "recent"
+			},
+			"profile_image_url": "http:\/\/a0.twimg.com\/profile_images\/1987760550\/Crest3_normal.gif",
+			"profile_image_url_https": "https:\/\/si0.twimg.com\/profile_images\/1987760550\/Crest3_normal.gif",
+			"source": "&lt;a href=&quot;http:\/\/blackberry.com\/twitter&quot;&gt;Twitter for BlackBerry\u00ae&lt;\/a&gt;",
+			"text": "Good morning do you need security staff or traffic marshals, flood watch officer for the weekend. Talk to us",
+			"to_user": null,
+			"to_user_id": 0,
+			"to_user_id_str": "0",
+			"to_user_name": null
+		}, {
+			"created_at": "Thu, 18 Oct 2012 08:55:00 +0000",
+			"entities": {
+				"hashtags": [],
+				"urls": [],
+				"user_mentions": [
+					{
+						"screen_name": "fake9JAnews",
+						"name": "FAKENEWS",
+						"id": 615573714,
+						"id_str": "615573714",
+						"indices": [3, 15]
+					}
+				]
+			},
+			"from_user": "mohammedbawa3",
+			"from_user_id": 575240822,
+			"from_user_id_str": "575240822",
+			"from_user_name": "ABG",
+			"geo": null,
+			"id": 258853675357859840,
+			"id_str": "258853675357859840",
+			"iso_language_code": "en",
+			"metadata": {
+				"result_type": "recent"
+			},
+			"profile_image_url": "http:\/\/a0.twimg.com\/profile_images\/2730483066\/94f74f98519d109508a39a6970e5a453_normal.jpeg",
+			"profile_image_url_https": "https:\/\/si0.twimg.com\/profile_images\/2730483066\/94f74f98519d109508a39a6970e5a453_normal.jpeg",
+			"source": "&lt;a href=&quot;http:\/\/blackberry.com\/twitter&quot;&gt;Twitter for BlackBerry\u00ae&lt;\/a&gt;",
+			"text": "BREAKING: SAB has reassured flood victims of government\u2019s support.",
+			"to_user": null,
+			"to_user_id": 0,
+			"to_user_id_str": "0",
+			"to_user_name": null
+		},{
+			"created_at": "Thu, 18 Oct 2012 08:54:52 +0000",
+			"entities": {
+				"hashtags": [
+					{
+						"text": "flood",
+						"indices": [14, 20]
+					}, {
+						"text": "ohdear",
+						"indices": [21, 28]
+					}
+				],
+				"urls": [
+					{
+						"url": "http:\/\/t.co\/mVW3DYhV",
+						"expanded_url": "http:\/\/instagr.am\/p\/Q6u1tMCCnf\/",
+						"display_url": "instagr.am\/p\/Q6u1tMCCnf\/",
+						"indices": [30, 50]
+					}
+				],
+				"user_mentions": []
+			},
+			"from_user": "jessjeffs",
+			"from_user_id": 270079011,
+			"from_user_id_str": "270079011",
+			"from_user_name": "Jessica jeffs",
+			"geo": null,
+			"id": 258853643015581698,
+			"id_str": "258853643015581698",
+			"iso_language_code": "da",
+			"metadata": {
+				"result_type": "recent"
+			},
+			"profile_image_url": "http:\/\/a0.twimg.com\/profile_images\/2334239025\/image_normal.jpg",
+			"profile_image_url_https": "https:\/\/si0.twimg.com\/profile_images\/2334239025\/image_normal.jpg",
+			"source": "&lt;a href=&quot;http:\/\/instagr.am&quot;&gt;Instagram&lt;\/a&gt;",
+			"text": "Route to uni! #flood #ohdear  http:\/\/t.co\/mVW3DYhV",
+			"to_user": null,
+			"to_user_id": 0,
+			"to_user_id_str": "0",
+			"to_user_name": null
+		}
+	],
+	"results_per_page": 15,
+	"since_id": 0,
+	"since_id_str": "0"
+}

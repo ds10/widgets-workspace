@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>hub2</title>
+
+    <link href="style/main.css" rel="stylesheet" media="all"/>
+
+    <style type="text/css">
+    </style>
+
+    <script src="script/main.js"></script>
+</head>
+
+  <body>
+
+ <script>
+//	hub.subscribe("hello", message);
+	
+	registerOpenAjax();
+	
+	function registerOpenAjax()
+  {
+   try
+	 {
+	  hub.subscribe("hello",message);
+	 }
+   catch (exception)
+	 {
+	  console.log("Can't subscribe to OpenAjax hub ("+exception+"). Trying again in "+(1000/1000)+"s...");
+	  window.setTimeout("registerOpenAjax()",1000*2);
+	 }
+  }
+
+	
+	
+ function message(msg){
+    console.dir(msg);
+ }
+ </script>
+
+
+</body>
+</html>

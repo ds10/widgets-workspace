@@ -1,0 +1,27 @@
+/* put your styles here */
+html
+{
+	max-width:320px !important;
+	max-height:320px !important;
+}
+
+body {
+    font-size: 0.9em;
+    font-family: Arial, Verdana, sans-serif;
+}
+
+.node {
+  stroke: #fff;
+  stroke-width: 1.5px;
+}
+
+.link {
+  stroke: #999;
+  stroke-opacity: .6;
+}
+
+#widgetWrapper{
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background:#333 url(hud.bg.png?zxvwss) top center repeat-x;
+}

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><widget xmlns="http://www.w3.org/ns/widgets" height="320" width="240">
+	<name>2hubWidgetsend</name>
+	
+	
+		<feature name="http://www.openajax.org/hub" required="true" xmlns:oa="http://www.openajax.org/hub">
+		<oa:topics>
+			<oa:topic />
+		</oa:topics>
+	</feature>
+</widget>

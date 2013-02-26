@@ -1,0 +1,265 @@
+{
+	"completed_in": 0.027,
+	"max_id": 258855655253880832,
+	"max_id_str": "258855655253880832",
+	"next_page": "?page=2&max_id=258855655253880832&q=flood&include_entities=1",
+	"page": 1,
+	"query": "flood",
+	"refresh_url": "?since_id=258855655253880832&q=flood&include_entities=1",
+	"results": [
+		{
+			"created_at": "Thu, 18 Oct 2012 09:02:40 +0000",
+			"entities": {
+				"hashtags": [
+					{
+						"text": "worthingstuff",
+						"indices": [52, 66]
+					}
+				],
+				"urls": [
+					{
+						"url": "http:\/\/t.co\/9O3lPDFH",
+						"expanded_url": "http:\/\/www.environment-agency.gov.uk\/homeandleisure\/floods\/34681.aspx?area=065WAC407&page=1&type=Town&term=worthing",
+						"display_url": "environment-agency.gov.uk\/homeandleisure\u2026",
+						"indices": [31, 51]
+					}
+				],
+				"user_mentions": []
+			},
+			"from_user": "artistsmakers",
+			"from_user_id": 15834810,
+			"from_user_id_str": "15834810",
+			"from_user_name": "Dan Thompson",
+			"geo": null,
+			"id": 258855607027777538,
+			"id_str": "258855607027777538",
+			"iso_language_code": "en",
+			"metadata": {
+				"result_type": "recent"
+			},
+			"profile_image_url": "http:\/\/a0.twimg.com\/profile_images\/1362322919\/danbyjan_normal.jpg",
+			"profile_image_url_https": "https:\/\/si0.twimg.com\/profile_images\/1362322919\/danbyjan_normal.jpg",
+			"source": "&lt;a href=&quot;http:\/\/twitter.com\/&quot;&gt;web&lt;\/a&gt;",
+			"text": "Flood alert for Pillnitz today http:\/\/t.co\/9O3lPDFH #dresdenstuff",
+			"to_user": null,
+			"to_user_id": 0,
+			"to_user_id_str": "0",
+			"to_user_name": null
+		}, {
+			"created_at": "Thu, 18 Oct 2012 09:02:40 +0000",
+			"entities": {
+				"hashtags": [
+					{
+						"text": "FloodAware",
+						"indices": [150, 161]
+					}
+				],
+				"urls": [
+					{
+						"url": "http:\/\/t.co\/uNT2GM80",
+						"expanded_url": "http:\/\/apps.facebook.com\/floodalerts\/",
+						"display_url": "apps.facebook.com\/floodalerts\/",
+						"indices": [129, 149]
+					}
+				],
+				"user_mentions": [
+					{
+						"screen_name": "EnvAgencyAnglia",
+						"name": "EnvAgencyAnglian",
+						"id": 252541548,
+						"id_str": "252541548",
+						"indices": [3, 19]
+					}
+				]
+			},
+			"from_user": "ICEEoE",
+			"from_user_id": 253134738,
+			"from_user_id_str": "253134738",
+			"from_user_name": "ICE East of England",
+			"geo": null,
+			"id": 258855606813855745,
+			"id_str": "258855606813855745",
+			"iso_language_code": "en",
+			"metadata": {
+				"result_type": "recent"
+			},
+			"profile_image_url": "http:\/\/a0.twimg.com\/profile_images\/1248115649\/ICE_Square_normal.jpg",
+			"profile_image_url_https": "https:\/\/si0.twimg.com\/profile_images\/1248115649\/ICE_Square_normal.jpg",
+			"source": "&lt;a href=&quot;http:\/\/twitter.com\/&quot;&gt;web&lt;\/a&gt;",
+			"text": "RT @EnvAgencyAnglia: We have 66 Flood Alerts and 17 Flood Warnings this morning... keep up-to-date with ongoing incidents here - http:\/\/t.co\/uNT2GM80 #FloodAware",
+			"to_user": null,
+			"to_user_id": 0,
+			"to_user_id_str": "0",
+			"to_user_name": null
+		}, {
+			"created_at": "Thu, 18 Oct 2012 09:01:59 +0000",
+			"entities": {
+				"hashtags": [],
+				"urls": [],
+				"user_mentions": []
+			},
+			"from_user": "MODIS_GeoBliki",
+			"from_user_id": 416661318,
+			"from_user_id_str": "416661318",
+			"from_user_name": "MODIS Flood Extent",
+			"geo": {
+				"coordinates": [-35.000000, 175.000000],
+				"type": "Point"
+			},
+			"id": 258855434805465090,
+			"id_str": "258855434805465090",
+			"iso_language_code": "it",
+			"metadata": {
+				"result_type": "recent"
+			},
+			"profile_image_url": "http:\/\/a0.twimg.com\/profile_images\/1648554065\/modis_normal.png",
+			"profile_image_url_https": "https:\/\/si0.twimg.com\/profile_images\/1648554065\/modis_normal.png",
+			"source": "&lt;a href=&quot;http:\/\/modis.geobliki.com&quot;&gt;MODIS_GeoBliki&lt;\/a&gt;",
+			"text": "Modis Flood Map Server is up and running http:\/\/modis.geobliki.com&quot;&gt;MODIS_GeoBliki&lt;\/a&gt;",
+			"to_user": null,
+			"to_user_id": 0,
+			"to_user_id_str": "0",
+			"to_user_name": null
+		}, {
+			"created_at": "Thu, 18 Oct 2012 09:01:59 +0000",
+			"entities": {
+				"hashtags": [],
+				"urls": [
+					{
+						"url": "http:\/\/t.co\/bWPbiz1Y",
+						"expanded_url": "http:\/\/bit.ly\/U7OCRs",
+						"display_url": "bit.ly\/U7OCRs",
+						"indices": [116, 136]
+					}
+				],
+				"user_mentions": []
+			},
+			"from_user": "MyanmarNews",
+			"from_user_id": 23174011,
+			"from_user_id_str": "23174011",
+			"from_user_name": "Myanmar News",
+			"geo": null,
+			"id": 258855433635262464,
+			"id_str": "258855433635262464",
+			"iso_language_code": "en",
+			"metadata": {
+				"result_type": "recent"
+			},
+			"profile_image_url": "http:\/\/a0.twimg.com\/profile_images\/89656940\/MyanmarNews_normal.jpg",
+			"profile_image_url_https": "https:\/\/si0.twimg.com\/profile_images\/89656940\/MyanmarNews_normal.jpg",
+			"source": "&lt;a href=&quot;http:\/\/twitterfeed.com&quot;&gt;twitterfeed&lt;\/a&gt;",
+			"text": "[via Google] Myanmar find could flood vintage Spitfire market - The Associated Press: AFPMyanmar find could floo... http:\/\/t.co\/bWPbiz1Y",
+			"to_user": null,
+			"to_user_id": 0,
+			"to_user_id_str": "0",
+			"to_user_name": null
+		}, {
+			"created_at": "Thu, 18 Oct 2012 09:01:59 +0000",
+			"entities": {
+				"hashtags": [],
+				"urls": [
+					{
+						"url": "http:\/\/t.co\/tbkFeIvU",
+						"expanded_url": "http:\/\/bit.ly\/RFLKWV",
+						"display_url": "bit.ly\/RFLKWV",
+						"indices": [118, 138]
+					}
+				],
+				"user_mentions": []
+			},
+			"from_user": "GreenSnowdonia",
+			"from_user_id": 368297122,
+			"from_user_id_str": "368297122",
+			"from_user_name": "GreenSnowdonia",
+			"geo": null,
+			"id": 258855433551372288,
+			"id_str": "258855433551372288",
+			"iso_language_code": "en",
+			"metadata": {
+				"result_type": "recent"
+			},
+			"profile_image_url": "http:\/\/a0.twimg.com\/profile_images\/1536058457\/Green_Snowdonia_logo_normal.png",
+			"profile_image_url_https": "https:\/\/si0.twimg.com\/profile_images\/1536058457\/Green_Snowdonia_logo_normal.png",
+			"source": "&lt;a href=&quot;http:\/\/bitly.com&quot;&gt;bitly&lt;\/a&gt;",
+			"text": "Do you have a flood plan for your business? Stay afloat or sink: The Ship Inn shows how to tackle rising flood risks. http:\/\/t.co\/tbkFeIvU",
+			"to_user": null,
+			"to_user_id": 0,
+			"to_user_id_str": "0",
+			"to_user_name": null
+		}, {
+			"created_at": "Thu, 18 Oct 2012 09:01:11 +0000",
+			"entities": {
+				"hashtags": [
+					{
+						"text": "flood",
+						"indices": [32, 38]
+					}
+				],
+				"urls": [],
+				"user_mentions": [],
+				"media": [
+					{
+						"id": 258855230714814464,
+						"id_str": "258855230714814464",
+						"indices": [39, 59],
+						"media_url": "http:\/\/p.twimg.com\/A5ejdfsCIAAqVY5.jpg",
+						"media_url_https": "https:\/\/p.twimg.com\/A5ejdfsCIAAqVY5.jpg",
+						"url": "http:\/\/t.co\/oOd8U5rM",
+						"display_url": "pic.twitter.com\/oOd8U5rM",
+						"expanded_url": "http:\/\/twitter.com\/AlexRygus\/status\/258855230710620160\/photo\/1",
+						"type": "photo",
+						"sizes": {
+							"medium": {
+								"w": 600,
+								"h": 450,
+								"resize": "fit"
+							},
+							"orig": {
+								"w": 640,
+								"h": 480,
+								"resize": "fit"
+							},
+							"thumb": {
+								"w": 150,
+								"h": 150,
+								"resize": "crop"
+							},
+							"small": {
+								"w": 340,
+								"h": 255,
+								"resize": "fit"
+							},
+							"large": {
+								"w": 640,
+								"h": 480,
+								"resize": "fit"
+							}
+						}
+					}
+				]
+			},
+			"from_user": "AlexRygus",
+			"from_user_id": 386023764,
+			"from_user_id_str": "386023764",
+			"from_user_name": "Alex Rygus",
+			"geo": null,
+			"id": 258855230710620160,
+			"id_str": "258855230710620160",
+			"iso_language_code": "en",
+			"metadata": {
+				"result_type": "recent"
+			},
+			"profile_image_url": "http:\/\/a0.twimg.com\/profile_images\/1575422513\/goosey_normal.jpg",
+			"profile_image_url_https": "https:\/\/si0.twimg.com\/profile_images\/1575422513\/goosey_normal.jpg",
+			"source": "&lt;a href=&quot;http:\/\/blackberry.com\/twitter&quot;&gt;Twitter for BlackBerry\u00ae&lt;\/a&gt;",
+			"text": "So I guess it rained last night #flood http:\/\/t.co\/oOd8U5rM",
+			"to_user": null,
+			"to_user_id": 0,
+			"to_user_id_str": "0",
+			"to_user_name": null
+		}
+	],
+	"results_per_page": 15,
+	"since_id": 0,
+	"since_id_str": "0"
+}

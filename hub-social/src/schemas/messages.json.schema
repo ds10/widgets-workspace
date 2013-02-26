@@ -1,0 +1,84 @@
+{
+	"type":"array",
+	"$schema": "http://json-schema.org/draft-03/schema",
+	"minitems": "0",
+	"id": "#",
+	"required":true,
+	"items": {
+		"type":"object",
+		"$schema": "http://json-schema.org/draft-03/schema",
+		"title": "message",
+		"description": "A social message, e.g., a facebook status or tweet.",
+		"required":false,
+		"properties":{
+			"feedIcon": {
+				"type":"string",
+				"description": "path to a (local) icon",
+				"id": "feedIcon",
+				"required":false
+			},
+			"feed": {
+				"type":"string",
+				"description": "Name for the feed, e.g., ",
+				"id": "feed",
+				"required":true
+			},
+			"geo": {
+				"type":"object",
+				"description": "A geo position",
+				"id": "geo",
+				"required":false,
+				"properties":{
+					"lat": {
+						"type":"number",
+						"description": "Latitude",
+						"id": "lat",
+						"required":true
+					},
+					"long": {
+						"type":"number",
+						"description": "Longitude",
+						"id": "long",
+						"required":true
+					}
+				}
+			},
+			"icon": {
+				"type":"string",
+				"description": "URL to user (profile) icon",
+				"id": "icon",
+				"required":false
+			},
+			"id": {
+				"type":"any",
+				"description": "Message ID, unique for a feed",
+				"id": "id",
+				"required":false
+			},
+			"text": {
+				"type":"string",
+				"description": "The message text.",
+				"id": "text",
+				"required":true
+			},
+			"ts": {
+				"type":"string",
+				"name": "Timestamp",
+				"description": "Timestamp of the message as JS date",
+				"id": "ts",
+				"required":true
+			},
+			"userId": {
+				"type":"string",
+				"description": "UserID, unique per feed.",
+				"id": "userId",
+				"required":true
+			},
+			"userName": {
+				"type":"string",
+				"id": "userName",
+				"required":false
+			}
+	}
+}
+}

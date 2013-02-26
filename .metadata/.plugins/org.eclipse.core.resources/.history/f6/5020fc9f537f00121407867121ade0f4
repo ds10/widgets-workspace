@@ -1,0 +1,691 @@
+var map;
+var mgr;
+var ZOOMLEVEL = 10;
+var COOLDOWN  = 1500;
+var WAITFORHUB = 1000;
+var incidents = Array();
+var webcams = Array();
+var officials = Array();
+var feedMarkers = Array();
+var eventMarkers = Array();
+var openWindow = null;
+var focusCircle = null;
+var doNotUpdate = false;
+var focussedVehicle = null;
+
+var data = {
+"incidents": [
+{"id":1,  "label":"Dresden flood",		"glat":51.030498504639, "glong":13.757200241089, "level":15, "duration":12*3600*1000, "peaktime":3600*1000*12},
+{"id":2,  "label":"Wasser ohne Ende",	"glat":49.014541625977, "glong":12.100855827332, "level":27, "duration":20*3600*1000, "peaktime":3600*1000*10},
+{"id":3,  "label":"Blubblub",			"glat":49.451198577881, "glong":11.052599906921, "level":7,  "duration":14*3600*1000, "peaktime":3600*1000*10},
+{"id":5,  "label":"Megastorm",			"glat":48.624000549316, "glong":8.0517101287842, "level":25, "duration":12*3600*1000, "peaktime":3600*1000*4},
+{"id":6,  "label":"Way too much water",	"glat":49.452030181885, "glong":11.076749801636, "level":8,  "duration":24*3600*1000, "peaktime":3600*1000*9},
+{"id":7,  "label":"10m flood",			"glat":49.217498779297, "glong":11.105400085449, "level":14, "duration":23*3600*1000, "peaktime":3600*1000*11},
+{"id":8,  "label":"12m flood",			"glat":51.19229888916,  "glong":7.0065598487854, "level":16, "duration":29*3600*1000, "peaktime":3600*1000*13},
+{"id":9,  "label":"15m flood",			"glat":49.473999023438, "glong":8.6077499389648, "level":20, "duration":34*3600*1000, "peaktime":3600*1000*12},
+{"id":10, "label":"18m flood",			"glat":50.922798156738, "glong":6.999340057373,  "level":24, "duration":18*3600*1000, "peaktime":3600*1000*7},
+{"id":11, "label":"9m flood",			"glat":51.338798522949, "glong":6.5853400230408, "level":12, "duration":24*3600*1000, "peaktime":3600*1000*24},
+{"id":13, "label":"2m flood",			"glat":49.249099731445, "glong":7.3655400276184, "level":3,  "duration":48*3600*1000, "peaktime":3600*1000*16},
+{"id":14, "label":"only a little water","glat":48.371398925781, "glong":10.898300170898, "level":1,  "duration":24*3600*1000, "peaktime":3600*1000*1},
+{"id":15, "label":"trickling",			"glat":47.390800476074, "glong":8.1734504699707, "level":1,  "duration":24*3600*1000, "peaktime":3600*1000*5},
+{"id":16, "label":"8m flood",			"glat":52.970165252686, "glong":11.156798362732, "level":12, "duration":17*3600*1000, "peaktime":3600*1000*12},
+{"id":17, "label":"Blaues Flutwunder",	"glat":51.05250972,     "glong":13.80955696,     "level":13, "duration":12*3600*1000, "peaktime":3600*1000*12},
+{"id":18, "label":"Palais unter Wasser","glat":51.06062907,     "glong":13.73499155,     "level":12, "duration":12*3600*1000, "peaktime":3600*1000*12}
+],
+
+"webcams": [
+{"id":1, "label":"Jimmy's LiveCam",    						"glat":51.040498504639, 	"glong":13.777200241089,	"steerable":true, "youtubeid":"OUCvlJdfqsY"},
+{"id":2, "label":"CamWeb SuperCam IV", 						"glat":48.634000549316, 	"glong":8.0617101287842,	"steerable":true, "youtubeid":"hTeQt3KmpNA", "youtubestart":5},
+{"id":3, "label":"Herbert's Garten",   						"glat":51.19229888916,  	"glong":7.0165598487854,	"steerable":true, "youtubeid":"G3JNUdTlTxY", "youtubestart":6},
+{"id":4, "label":"Weisseritzufer", 							"glat":51.02606479, 	  	"glong":13.70132446,		"steerable":true, "youtubeid":"R3ap1mMzczc","youtubestart":3},
+{"id":5, "label":"Elbtal-Panorama", 						"glat":51.05693373, 	  	"glong":13.76037598,		"steerable":true, "youtubeid":"tCfL619drqM"},
+{"id":6, "label":"Cologne Live", 							"glat":50.9398252, 	  		"glong":6.96121216,			"steerable":true, "youtubeid":"ttcQy3bCiiU", "youtubestart":15},
+{"id":7, "label":"Mannheim Webcam", 						"glat":49.48039388,     	"glong":8.46153259,			"steerable":true, "youtubeid":"iGXww36_R9c", "youtubestart":11},
+{"id":8, "label":"RiverSurveillance Regensburg",			"glat":49.02053464,			"glong":12.11603165,		"steerable":true, "youtubeid":"qi-ttyYan74"},
+{"id":9, "label":"Augsburg Visuals", 						"glat":48.37626411,     	"glong":10.91706276,		"steerable":true, "youtubeid":"zTfTdpSOWDY","youtubestart":40},
+{"id":10,"label":"Lüchow Park", 							"glat":52.96554559,    		"glong":11.15421295,		"steerable":true, "youtubeid":"4A5uBDX9Mtw"},
+{"id":11,"label":"Nürnberg Park Cam", 						"glat":49.45049477,     	"glong":11.09327316,		"steerable":true, "youtubeid":"NMziLdZP_eA"},
+{"id":12,"label":"Nürnberg Hospital Park",					"glat":49.45596276,     	"glong":11.06610775,		"steerable":true, "youtubeid":"jgWbYDUm-ME","youtubestart":5},
+{"id":13,"label":"Dresden Hofkirche",						"glat":51.05350786,   	  	"glong":13.73786688,		"steerable":true, "imgurl":"http://87.139.63.28/record/current.jpg"},
+{"id":14,"label":"Dresden Messegelände",					"glat":51.07397838,     	"glong":13.71248245,		"steerable":true, "youtubeid":"lNq-qai3Ck0"},
+{"id":15,"label":"Dresden Traffic Cam II",					"glat":51.05736532,    	 	"glong":13.68905067,		"steerable":true, "youtubeid":"3x_v2OmKTp0"},
+{"id":16, "label":"Blick auf das Blaue Wunder",    			"glat":51.04992, 			"glong":13.818192,			"steerable":true, "imgurl":"http://camera.victoria.hu/axis-cgi/jpg/image.cgi", "offsetX":560, "offsetY":430},
+{"id":33, "label":"Neustadt",    							"glat":51.061519, 			"glong":13.740622,			"steerable":true, "imgurl":"http://webcam.vardebib.dk/axis-cgi/jpg/image.cgi"},
+{"id":17, "label":"VVO Marienbrücke",    					"glat":51.06089878823406,	"glong":13.732073307037354,	"steerable":true, "imgurl":"http://www.vvo-online.de/webcamimage/deliver.do?path=/Webcams/cam_vg.102.jpg"},
+{"id":18, "label":"VVO St. Petersburger Straße",    		"glat":51.02718496018176,	"glong":13.731386661529541,	"steerable":true, "imgurl":"http://www.vvo-online.de/webcamimage/deliver.do?path=/Webcams/cam_vg.116.jpg"},
+{"id":19, "label":"VVO St. Petersburger Str.",    			"glat":51.02687455489149,	"glong":13.753080368041992,	"steerable":true, "imgurl":"http://www.vvo-online.de/webcamimage/deliver.do?path=/Webcams/cam_vg.101.jpg"},
+{"id":20, "label":"VVO Bergstraße (Richtung Süd)",    		"glat":51.043552519760375,	"glong":13.737759590148926,	"steerable":true, "imgurl":"http://www.vvo-online.de/webcamimage/deliver.do?path=/Webcams/cam_vg.118.jpg"},
+{"id":21, "label":"VVO Carolabrücke (Richtung Neustadt)",   "glat":51.053656229817115,	"glong":13.74739408493042,	"steerable":true, "imgurl":"http://www.vvo-online.de/webcamimage/deliver.do?path=/Webcams/cam_vg.104.jpg"},
+{"id":22, "label":"VVO Meißner Landstraße",    				"glat":51.067196330551624,	"glong":13.674416542053223,	"steerable":true, "imgurl":"http://www.vvo-online.de/webcamimage/deliver.do?path=/Webcams/cam_vg.129.jpg"},
+{"id":23, "label":"VVO Albertbrücke",    					"glat":51.057904795300075,	"glong":13.753767013549805,	"steerable":true, "imgurl":null},
+{"id":24, "label":"VVO Nossener Brücke",    				"glat":51.03834467369239,	"glong":13.71366262435913,	"steerable":true, "imgurl":"http://www.vvo-online.de/webcamimage/deliver.do?path=/Webcams/cam_vg.127.jpg"},
+{"id":25, "label":"VVO Bergstraße",    						"glat":51.0295601666349,	"glong":13.730775117874146,	"steerable":true, "imgurl":"http://www.vvo-online.de/webcamimage/deliver.do?path=/Webcams/cam_vg.128.jpg"},
+{"id":26, "label":"VVO Löbtauer Brücke",   				 	"glat":51.049967079810216,	"glong":13.704870343208313,	"steerable":true, "imgurl":"http://www.vvo-online.de/webcamimage/deliver.do?path=/Webcams/cam_vg.121.jpg"},
+{"id":27, "label":"VVO Antonstraße",    					"glat":51.0646612345276,	"glong":13.741214275360107,	"steerable":true, "imgurl":"http://www.vvo-online.de/webcamimage/deliver.do?path=/Webcams/cam_vg.131.jpg"},
+{"id":28, "label":"VVO Hainstraße",    						"glat":51.06416228970321,	"glong":13.740355968475342,	"steerable":true, "imgurl":"http://www.vvo-online.de/webcamimage/deliver.do?path=/Webcams/cam_vg.132.jpg"},
+{"id":29, "label":"VVO Wilsdruffer Straße",    				"glat":51.04975799669603,	"glong":13.742008209228516,	"steerable":true, "imgurl":"http://www.vvo-online.de/webcamimage/deliver.do?path=/Webcams/cam_vg.108.jpg"},
+{"id":30, "label":"VVO Königsbrücker Straße (Richtung Nord)", "glat":51.06987960539905, "glong":13.749346733093262,	"steerable":true, "imgurl":"http://www.vvo-online.de/webcamimage/deliver.do?path=/Webcams/cam_vg.109.jpg"},
+{"id":31, "label":"VVO Fritz-Löffler-Straße",    			"glat":51.03636122087804,	"glong":13.732030391693115,	"steerable":true, "imgurl":"http://www.vvo-online.de/webcamimage/deliver.do?path=/Webcams/cam_vg.115.jpg"},
+{"id":32, "label":"VVO Königsbrücker Straße (Richtung Süd)","glat":51.06654908519133,	"glong":13.747007846832275,	"steerable":true, "imgurl":"http://www.vvo-online.de/webcamimage/deliver.do?path=/Webcams/cam_vg.111.jpg"},
+{"id":33, "label":"Frauenkirche (MDR)",						"glat":51.051356,			"glong":13.741331,			"steerable":false, "imgurl":"http://www.mdr.de/scripts4/frauen.jpg?pic=mdr2-gross.jpg"},
+{"id":34, "label":"Dresdner Zwinger",						"glat":51.053063,			"glong":13.731492,			"steerable":true, "imgurl":"http://www.softed.de/webcam/zwinger.jpg"},
+{"id":35, "label":"Gorbitz Center",							"glat":51.049825,			"glong":13.660585,			"steerable":true, "imgurl":"http://www.gorbitz-center.de/webcam.jpg"},
+{"id":36, "label":"Fernsehturm-Cam",						"glat":51.02736,			"glong":13.836323,			"steerable":true, "imgurl":"http://fernsehturmcam.eb-world.de/pics/Fernsehturm.jpg"},
+{"id":37, "label":"Elbe-Park",								"glat":51.083388,			"glong":13.694519,			"steerable":true, "imgurl":"http://www.elbepark.info/files/webcam_2b.jpg"},
+{"id":38, "label":"Dresden Rockau",							"glat":51.028548,			"glong":13.865687,			"steerable":true, "imgurl":"http://www.georelief.de/WebCams/Rockau/current640x480.jpg"},
+{"id":39, "label":"Dresden Loschwitz",						"glat":51.052955,			"glong":13.81715,			"steerable":true, "imgurl":"http://www.georelief.de/WebCams/Loschwitz/current640x480.jpg"},
+{"id":40, "label":"Waldschlösschenbrücke",					"glat":51.065383,			"glong":13.765868,			"steerable":true, "imgurl":"http://www.wsb-info.de/webcam-archive/image.jpg"},
+{"id":41, "label":"Hotel am Terrassenufer",					"glat":51.053022,			"glong":13.749212,			"steerable":true, "imgurl":"http://cams.drefa-msg.de/terrassenufer_cam.jpg"}
+
+
+],
+
+"officials": [
+{"id":1, "label":"Dresdner Feuerwehr",  	"glat":51.033498504639, "glong":13.747200241089, "telephone":"+49 351 999888"},
+{"id":2, "label":"Dresden Police HQ",  		"glat":51.05056735, "glong":13.74200821, "telephone":"+49 351 111222"},
+{"id":3, "label":"Luckenwalde Firefighters",  	"glat":52.09237484, "glong":13.17020416, "telephone":"+49 3371 999888"},
+{"id":4, "label":"Regensburg Flood Security",  	"glat":49.00499706, "glong":12.09629059, "telephone":"+49 941 999888"},
+{"id":5, "label":"Feuerwehrhauptquartier Nürnberg",  	"glat":49.45562801, "glong":11.07816696, "telephone":"+49 911 999888"},
+{"id":6, "label":"Polizei Nürnberg",  	"glat":49.44044993, "glong":11.07336044, "telephone":"+49 911 111222"},
+{"id":7, "label":"Augsburg Police",  	"glat":48.3666282, "glong":10.88573456, "telephone":"+49 821 111222"},
+{"id":8, "label":"Police Mannheim",  	"glat":49.49912731, "glong":8.47251892, "telephone":"+49 621 111222"},
+{"id":9, "label":"Freiwillige Feuerwehr Saarbrücken",  	"glat":49.24091405, "glong":6.98043823, "telephone":"+49 68 999888"},
+{"id":10, "label":"Police Cologne",  	"glat":50.92662658, "glong":6.95022583, "telephone":"+49 221 111222"},
+{"id":11, "label":"Firefighters Krefeld",  	"glat":51.34197962, "glong":6.57772064, "telephone":"+49 2151 999888"}
+]
+};
+
+	
+function initialize()
+  {
+   loadData(data);
+	
+   // initialize the map
+   var myOptions = {zoom: 5, center: new google.maps.LatLng(51.151786,10.415039), mapTypeId: google.maps.MapTypeId.ROADMAP};
+   map = new google.maps.Map(document.getElementById("map_canvas"),myOptions);
+   
+   // initialize the clusterer
+   mgr = new MarkerManager(map);
+   addMarkers();
+    
+   // drop user position on map
+   if (navigator.geolocation) navigator.geolocation.getCurrentPosition(showPosition,error);
+   else console.log("HTML5 GeoLocation is not supported by your browser.");
+   
+   registerOpenAjax();
+  }
+
+function registerOpenAjax()
+  {
+   try
+	 {
+	  hub.subscribe("http://ict-omelette.eu/topics/social/messages",showFeeds);
+	  hub.subscribe("http://ict-omelette.eu/topics/social/message",focusFeed);
+	  hub.subscribe("http://dev.ict-omelette.eu/iwc-topics-sap/vehicleposition",focusVehicle);
+	  hub.subscribe("http://ict-omelette.eu/topics/events",showEvents);
+	  hub.subscribe("http://ict-omelette.eu/topics/event",focusEvent);
+	 }
+   catch (exception)
+	 {
+	  console.log("Can't subscribe to OpenAjax hub ("+exception+"). Trying again in "+(WAITFORHUB/1000)+"s...");
+	  window.setTimeout("registerOpenAjax()",WAITFORHUB*=2);
+	 }
+  }
+
+function loadData(data)
+  { 
+   if (data == null) return;
+   
+   incidents = data.incidents;
+   webcams = data.webcams;
+   officials = data.officials;
+  }
+
+function addMarkers()
+  {
+   // load incidents, webcams and officials
+   var incidentMarkers = showIncidents();
+   var webcamMarkers = showWebcams();
+   var officialMarkers = showOfficials();
+
+   // use marker manager to show markers only at zoom level
+   google.maps.event.addListener(mgr, 'loaded', function()
+     {
+      mgr.addMarkers(webcamMarkers, ZOOMLEVEL);
+      mgr.addMarkers(officialMarkers, ZOOMLEVEL);       
+      mgr.refresh();
+     });
+   
+   google.maps.event.addListener(map, 'idle', function() {
+       mapBoundsChanged();
+     });
+  }
+  
+function showPosition(position)
+  {	
+   // show user's position on the map
+   var marker = createGenericMarker(new google.maps.LatLng(position.coords.latitude, position.coords.longitude),"marker_position","Your position",true);
+   marker.setMap(map);
+  }
+  
+function error(msg)
+  {
+   console.log("Error: "+msg);
+  }  
+
+function mapBoundsChanged()
+  {
+   if (doNotUpdate) return;
+	
+   var bounds = map.getBounds();
+   var sw = bounds.getSouthWest();
+   var ne = bounds.getNorthEast();
+   var east = new google.maps.LatLng(0, ne.lng());
+   var west = new google.maps.LatLng(0,sw.lng());
+   var north = new google.maps.LatLng(ne.lat(), 0);
+   var south = new google.maps.LatLng(sw.lat(), 0);
+   var width = google.maps.geometry.spherical.computeDistanceBetween(east, west);
+   var height = google.maps.geometry.spherical.computeDistanceBetween(north, south);
+   
+   var focusArea = {"center":{"lat":map.center.lat(),"long":map.center.lng()},"radius":Math.round((width+height)/(4*1000*1.5))}
+
+   startNoUpdateInterval();
+   
+   // only send out if there is no text window opened
+   if (!openWindow) hub.publish("http://ict-omelette.eu/topics/geo/circularArea",focusArea);
+  }
+  
+function showIncidents()
+  {	  
+   var markers = [];
+   var incidentCluster = new MarkerClusterer(map);	  
+  
+   for (var i = 0; i < incidents.length; i++)
+     {
+	   markers.push(createIncident(incidents[i],incidentCluster));		   
+     }
+   
+   return markers;
+  }
+  
+function showWebcams()
+  {  
+   var markers = [];
+   
+   for (var i = 0; i < webcams.length; i++)
+     {
+	  markers.push(createWebcam(webcams[i]));		   
+     }
+   
+   return markers;
+  }
+  
+function showOfficials()
+  {
+   var markers = [];
+	
+   for (var i = 0; i < officials.length; i++)
+     {
+	  markers.push(createOfficial(officials[i]));		   
+     }
+   
+   return markers;
+  }
+
+function findFeed(feed,haystack)
+  {
+   // only feeds with geo info can be found
+   if (!feed.geo) return -1;
+	
+   // lookup all the feeds
+   for (var i = 0; i < haystack.length; i++)
+	 {
+	  // check id, glat and glong
+	  if (haystack[i].feedId == feed.id && haystack[i].feed.geo.lat == feed.geo.lat && haystack[i].feed.geo.long == feed.geo.long) return i;
+	 }
+   
+   // nothing found
+   return -1;
+  }
+
+function showFeeds(channel,feeds,meta)
+  {
+   var toKeep = Array();
+   var toAdd  = Array();
+	
+   //
+   for (var i = 0; i < feeds.length; i++)
+	 {
+	  var feed = feeds[i];
+	  
+	  if (feed.geo)
+	    {
+	     var oldIndex = findFeed(feed,feedMarkers);
+	  
+	     // not found
+         if (oldIndex == -1)
+    	   {
+    	    toAdd.push(feed);
+    	   }
+         // keep the old marker
+         else
+           {
+        	toKeep.push(feedMarkers[oldIndex]);
+           }
+		}
+     }
+	
+   // remove old markers
+   for (var i = 0; i < feedMarkers.length; i++)
+	 {
+	  var remove = true;
+	  
+	  for (var k = 0; k < toKeep.length; k++)
+		{
+		 if (toKeep[k] == feedMarkers[i]) remove = false;  
+		}
+	  
+	  if (remove) feedMarkers[i].setMap(null);
+	 }
+   
+   // clean list of markers
+   feedMarkers = [];
+   
+   for (var i = 0; i < toKeep.length; i++)
+	 {
+	  feedMarkers.push(toKeep[i]);
+	 }
+   	
+   // add new markers
+   for (var i = 0; i < toAdd.length; i++)
+	 {
+      var feed = toAdd[i];
+   	 // drop markers with slight delay for "rain" effect -- disabled
+     /*  window.setTimeout((function(feed) { return function()
+          {*/
+    	   
+        var marker = createFeed(feed);
+        marker.setMap(map);
+        // save the feed id
+        marker.feedId = feed.id;
+        feedMarkers.push(marker);
+     /*  }; })(feed),i*50);*/
+	 }
+  }
+
+function showEvents(channel,events,meta)
+  {   	
+   // remove old markers
+   for (var i = 0; i < eventMarkers.length; i++)
+	 {
+	  eventMarkers[i].setMap(null);
+	 }
+   
+   // clean list of markers
+   eventMarkers = [];
+      	
+   // add new markers
+   for (var i = 0; i < events.length; i++)
+	 {
+      var event = events[i];   	
+    	   
+      var marker = createEvent(event);
+      marker.setMap(map);
+      eventMarkers.push(marker);
+	 }
+  }
+ 
+function createIncident(incident,markerclusterer)
+  {
+	var marker = createGenericMarker(new google.maps.LatLng(incident.glat, incident.glong),"marker_incident",incident.label);
+
+	   google.maps.event.addListener(marker, 'click', function(event)
+		 {		   
+		   var map = marker.getMap();
+		   
+		   // if map shows too much, zoom in
+		   startNoUpdateInterval();
+		   if (map.getZoom() < ZOOMLEVEL) map.setZoom(ZOOMLEVEL);
+		   map.panTo(marker.position);
+		   
+		   // let the marker bounce
+		   marker.setAnimation(google.maps.Animation.BOUNCE);
+		   window.setTimeout(function(){marker.setAnimation(null)},800);
+		   
+		   try
+		     {
+		      hub.publish("http://ict-omelette.eu/topics/geo/floodEvent",incident);
+		     }
+		   catch (exception)
+		     {
+			  console.log("No ajax hub available: "+exception)
+		     }
+		 });
+	   	   
+	   // add marker to clusterer
+	   markerclusterer.addMarker(marker);
+	   
+	   return marker;
+  } 
+
+function createWebcam(webcam)
+  {
+	var marker = createGenericMarker(new google.maps.LatLng(webcam.glat, webcam.glong),webcam.imgurl?"marker_camera":"marker_camera_old",webcam.label);
+
+	   google.maps.event.addListener(marker, 'click', function(event)
+			   {
+		   // let the marker bounce
+		   marker.setAnimation(google.maps.Animation.BOUNCE);
+		   window.setTimeout(function(){marker.setAnimation(null)},800);
+		   
+		   try
+		     {
+		      hub.publish("http://ict-omelette.eu/topics/resource/webcam",webcam);
+		     }
+		   catch (exception)
+		     {
+			  console.log("No ajax hub available: "+exception)
+		     }
+			   });   	
+	   
+	   return marker;  
+  } 
+
+
+function createFeed(feed)
+  {
+   var marker = createGenericMarker(new google.maps.LatLng(feed.geo.lat, feed.geo.long),"marker_feed",feed.text,false);
+   // create an info window that is shown upon click
+   var fmt = new TwitterCldr.TimespanFormatter();
+   var timestring = fmt.format((Date.parse(feed.ts) - Date.now())/1000); 
+   
+   var infowindow = new google.maps.InfoWindow({
+	    content: "<div class='infowindow'><img src='"+feed.icon+"' title='"+feed.userName+"' alt='User Avatar' class='avatar'/><div class='textpanel'><h1>"+feed.userName+"</h1><p class='text'>"+feed.text+"</p><p class='time'>"+timestring+"</p></div></div>"
+	});
+   
+   // attach the window to the marker
+   marker.infoWindow = infowindow;
+   marker.feed = feed;
+   
+   google.maps.event.addListener(marker, 'click', function(event) 
+     {
+	  startNoUpdateInterval();
+	  console.log(feed.text+" selected!");
+	  
+	  if (openWindow) openWindow.close();
+	  openWindow = infowindow;
+	  
+	  // open the window
+	  openWindow.open(map,marker);
+	  
+	  // detect when its closed
+	  google.maps.event.addListener(openWindow, 'closeclick', function() {
+			openWindow = null;
+		});
+     });   	
+	   
+   return marker;
+  } 
+
+
+function createEvent(event)
+  {
+   var marker = createGenericMarker(new google.maps.LatLng(event.latitude, event.longitude),"marker_event",event.title,false);
+   marker.event = event;
+   
+   // create an info window that is shown upon click
+
+   var d = new Date(Date.parse(event.start_time));
+   var eventtime = d.getFullYear()+"-"+('0'+d.getMonth()).slice(-2)+"-"+('0'+d.getDate()).slice(-2)+" "+('0'+d.getHours()).slice(-2)+":"+('0'+d.getMinutes()).slice(-2);
+   
+   if (event.stop_time != null) eventtime += " ("+((Date.parse(event.stop_time)-Date.parse(event.start_time))/60000)+" min)";
+	 
+   var content = "<div class='infowindow'>";
+   
+   if (event.image && event.image.url) content += "<img src='"+event.image.url+"' title='"+event.image.caption+"' alt='Event' class='avatar'/>";
+   
+   content += "<div class='textpanel'><h1>"+event.title+"</h1>";
+
+ 
+   if (event.performers)
+	 {
+      content += "<p class='text'><strong>Artists:</strong> ";
+		
+      if (event.performers.performer.length)
+    	{ 
+	     for (var i = 0; i < event.performers.performer.length; i++)
+		   {
+		    var performer = event.performers.performer[i];
+
+	        if (i > 0) content += ", ";
+	        content += performer.name;
+	        
+	        if (performer.short_bio) content +" ("+performer.short_bio+")";
+		   }
+    	}
+      else
+    	{
+    	 var performer = event.performers.performer;
+	     content += performer.name;
+	        
+	     if (performer.short_bio) content +" ("+performer.short_bio+")";
+    	}
+	  
+	  content += "</p>";
+	 }
+ 
+   if (event.venue_name)
+     {
+      content += "<p class='text'><strong>Location: </strong>"+event.venue_name;
+  
+      if (event.venue_address) content += " ("+event.venue_address+")";
+ 
+      content += "</p>";
+     }
+   
+   if (event.description) content += "<p class='text'>"+event.description+"</p>";
+   
+   content += "<p class='time'>"+eventtime+"</p></div></div>";
+   
+   var infowindow = new google.maps.InfoWindow({
+	    content: content
+	});
+   
+   // attach the window to the marker
+   marker.infoWindow = infowindow;
+   
+   google.maps.event.addListener(marker, 'click', function(event) 
+     {
+	  startNoUpdateInterval();
+	  
+	  if (openWindow) openWindow.close();
+	  openWindow = infowindow;
+	  
+	  // open the window
+	  openWindow.open(map,marker);
+	  
+	  // detect when its closed
+	  google.maps.event.addListener(openWindow, 'closeclick', function() {
+			openWindow = null;
+		});
+     });   	
+	   
+   return marker;
+  } 
+
+function focusFeed(channels,feed,meta)
+  {
+   var feedMarker = null;
+	
+   // if the feed is already shown, use that
+   for (var i = 0; i < feedMarkers.length; i++)
+	 {
+	  if (feedMarkers[i].feedId == feed.id)
+		{
+		 feedMarker = feedMarkers[i];
+		}
+	 }
+   
+   // otherwise, create it anew
+   if (feedMarker == null)
+	 {
+	  feedMarker = createFeed(feed);
+	  feedMarker.setMap(map);
+      // save the feed id
+	  feedMarker.feedId = feed.id;
+      feedMarkers.push(feedMarker);
+	 }
+   
+   // now center on the feed and open the infowindow
+   startNoUpdateInterval();
+	  
+   if (openWindow) openWindow.close();
+   openWindow = feedMarker.infoWindow;
+	  
+   // open the window
+   openWindow.open(map,feedMarker);
+   
+   // detect when its closed
+   google.maps.event.addListener(openWindow, 'closeclick', function() {
+		openWindow = null;
+	});
+  } 
+
+
+function focusEvent(channels,event,meta)
+  {
+   for (var i = 0; i < eventMarkers.length; i++)
+	 {
+	  if (eventMarkers[i].event.id == event.id)
+		{
+		 eventMarkers[i].setAnimation(google.maps.Animation.BOUNCE);
+		 window.setTimeout(function(){eventMarkers[i].setAnimation(null)},800);
+		 
+		 // now center on the feed and open the infowindow
+		 startNoUpdateInterval();
+		 map.panTo(eventMarkers[i].position);	  
+		 
+		 return;
+		}
+	 }	
+  } 
+
+function focusVehicle(channels,vehicle,meta)
+  {	
+   // if the vehicle is already shown, use that, otherwise create anew
+   if (focussedVehicle == null || vehicle.licencePlate != focussedVehicle.licencePlate)
+	 {
+	  if (focussedVehicle != null) focussedVehicle.setMap(null);
+	   
+	  createVehicle(vehicle);
+	 }
+   // if it exists, center anyway
+   else
+	 {
+	  // now center on the vehicle
+	  startNoUpdateInterval();   
+	  map.panTo(focussedVehicle.position);
+	 }
+  } 
+
+function createOfficial(official)
+  {
+	var marker = createGenericMarker(new google.maps.LatLng(official.glat, official.glong),"marker_police",official.label);
+
+	   google.maps.event.addListener(marker, 'click', function(event)
+	     {
+		   // let the marker bounce
+		   marker.setAnimation(google.maps.Animation.BOUNCE);
+		   window.setTimeout(function(){marker.setAnimation(null)},800);
+
+		   try
+		     {
+		      hub.publish("http://ict-omelette.eu/topics/political/publicAuthority",official);
+			  hub.publish("http://ict-omelette.eu/topics/social/telephoneNumber",official.telephone);
+		     }
+		   catch (exception)
+		     {
+			  console.log("No ajax hub available: "+exception)
+		     }
+	      });
+	   
+	   return marker;
+  } 
+
+function createVehicle(vehicle)
+  {
+   var geocoder = new google.maps.Geocoder();
+   
+   geocoder.geocode({'address': vehicle.address},function(results,status)  
+     {
+	  // check for failing
+	  if (status != google.maps.GeocoderStatus.OK)
+	    {
+		 console.log("Geocoder failed due to: " + status);
+		 return;
+	    }
+	  if (!results[0])
+	    {
+	     console.log("No results found");
+	     return;
+	    }
+
+	  var marker = createGenericMarker(results[0].geometry.location,"marker_vehicle",vehicle.licencePlate+" ("+vehicle.carType+", "+vehicle.status+")");
+	   
+	  marker.setMap(map);
+      // save the vehicle label
+	  marker.licencePlate = vehicle.licencePlate;
+	  
+	  focussedVehicle = marker;
+	  
+	  // now center on the vehicle
+	  startNoUpdateInterval();   
+	  map.panTo(marker.position);
+	 });
+  } 
+
+function createGenericMarker(location, icon, label,drop) {
+	  // Add markers to the map
+
+	  // Marker sizes are expressed as a Size of X,Y
+	  // where the origin of the image (0,0) is located
+	  // in the top left of the image.
+
+	  // Origins, anchor positions and coordinates of the marker
+	  // increase in the X direction to the right and in
+	  // the Y direction down.
+	  var image = new google.maps.MarkerImage('icons/'+icon+'.png',
+	      new google.maps.Size(22, 35),
+	      new google.maps.Point(0,0),
+	      new google.maps.Point(11, 34));
+	  var shadow = new google.maps.MarkerImage('icons/marker_shadow.png',
+	      // The shadow image is larger in the horizontal dimension
+	      // while the position and offset are the same as for the main image.
+	      new google.maps.Size(40, 37),
+	      new google.maps.Point(0,0),
+	      new google.maps.Point(11, 34));
+	      // Shapes define the clickable region of the icon.
+	      // The type defines an HTML <area> element 'poly' which
+	      // traces out a polygon as a series of X,Y points. The final
+	      // coordinate closes the poly by connecting to the first
+	      // coordinate.
+	  var shape = {
+	      coord: [11,0, 19,4, 21,10, 20,16, 15,21, 17,30, 11,35, 10,30, 7,21, 2,16, 1,10, 3,4],
+	      type: 'poly'
+	  };
+	  
+	   return new google.maps.Marker({
+	        position: location,
+	        shadow: shadow,
+	        icon: image,
+	        shape: shape,
+	        title: label,
+	        animation: drop?google.maps.Animation.DROP:null
+	    });
+	}
+
+function startNoUpdateInterval()
+  {
+   doNotUpdate = true;   
+   window.setTimeout(function() { doNotUpdate = false; },COOLDOWN);
+  }

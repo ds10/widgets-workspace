@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns="http://www.w3.org/ns/widgets" height="500" width="480"
+	id="http://mms.t-systems.de/widgets/incidentMap" version="0.1"
+	viewmodes="fullscreen floating minimized maximized windowed">
+	<name short="EmergencyMap">Emergency Map</name>
+
+
+	<icon src="icon.png" width="80" height="80"/>
+	<description>
+		This widget displays a google map, showing emergency incidents on it. Users can select incidents to receive details.
+		Additionally, live webcams, public authorities and user messages nearby are shown.
+	</description>
+	<author email="mtni@mms-dresden.de">Matthias Niederhausen</author>
+	<feature name="http://www.openajax.org/hub" required="false" xmlns:oa="http://www.openajax.org/hub">
+		<oa:topics>
+			<oa:topic />
+		</oa:topics>
+
+		<oa:publications>
+			<oa:publication oa:topic="http://ict-omelette.eu/topics/geo/floodEvent">
+    			<oa:trigger oa:type="user" />
+			</oa:publication>
+			<oa:publication oa:topic="http://ict-omelette.eu/topics/geo/circularArea">
+    			<oa:trigger oa:type="user" />
+			</oa:publication>
+			<oa:publication oa:topic="http://ict-omelette.eu/topics/resource/webcam">
+    			<oa:trigger oa:type="user" />
+			</oa:publication>
+			<oa:publication oa:topic="http://ict-omelette.eu/topics/social/telephoneNumber">
+    			<oa:trigger oa:type="user" />
+			</oa:publication>
+			<oa:publication oa:topic="http://ict-omelette.eu/topics/political/publicAuthority">
+    			<oa:trigger oa:type="user" />
+			</oa:publication>
+		</oa:publications>
+
+		<oa:subscriptions>
+			<oa:subscription oa:topic="http://ict-omelette.eu/topics/social/message"/>
+			<oa:subscription oa:topic="http://ict-omelette.eu/topics/social/messages"/>
+			<oa:subscription oa:topic="http://dev.ict-omelette.eu/iwc-topics-sap/vehicleposition"/>
+		</oa:subscriptions>
+	</feature>
+	<tag lang="en">flood incident</tag>
+	<tag lang="en">map</tag>
+	<tag lang="en">webcam</tag>
+	<tag lang="en">messages</tag>
+	<tag lang="de">überschwemmung</tag>
+	<tag lang="de">karte</tag>
+	<tag lang="de">webcam</tag>
+	<tag lang="de">nachrichten</tag>
+	<category lang="en">Tools</category>
+	<category lang="en">Weather</category>
+	<category lang="en">Mapping</category>
+	<category lang="en">Widgets</category>
+	<category lang="en">Events</category>
+	<category lang="en">Feeds</category>
+</widget>

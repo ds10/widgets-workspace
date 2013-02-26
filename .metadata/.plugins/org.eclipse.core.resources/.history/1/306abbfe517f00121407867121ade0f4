@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>hub2</title>
+
+    <link href="style/main.css" rel="stylesheet" media="all"/>
+
+    <style type="text/css">
+    </style>
+
+    <script src="script/main.js"></script>
+</head>
+
+  <body onload="hub.subscribe('topic', message);">
+	<script>
+
+	function message(msg){
+	   console.dir(msg);
+	}
+	</script>
+
+</body>
+</html>

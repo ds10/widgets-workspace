@@ -1,0 +1,38 @@
+// main.js - put your code here
+var WAITFORHUB = 1000;
+
+
+/*
+ * initialize the widget. natch.
+ * 
+ */
+
+function initialize()
+{
+ registerOpenAjax();
+}
+
+
+/*
+ *  RegisterOpenAjax() is a technique was 'borrowed' from emergancy map widget. There
+ *  is a bug in subscribing to topics in an old version of wookie
+ *  that currently ships with Rave. BO
+ *  
+ */
+function registerOpenAjax()
+  {
+   try
+	 {
+	  hub.subscribe("http://davidsherlock.info",doSomething);
+	  }
+   catch (exception)
+	 {
+	  console.log("Can't subscribe to OpenAjax hub ("+exception+"). Trying again in "+(WAITFORHUB/1000)+"s...");
+	  window.setTimeout("registerOpenAjax()",WAITFORHUB*2);
+	 }
+  }
+
+function doSomething()
+{
+	console.log(msg);
+}

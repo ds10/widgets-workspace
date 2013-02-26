@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns="http://www.w3.org/ns/widgets" height="275" width="400"
+	id="http://mms.t-systems.de/widgets/remoteCam" version="0.1"
+	viewmodes="fullscreen floating minimized maximized windowed">
+	<name short="RemoteCam">Remote-Controlled Webcam</name>
+
+
+	<icon src="icon.png" width="80" height="80"/>
+	<description>
+		This widget allows you to control a remote web camera. In
+		the prototype, this is emulated using youtube videos. For iDevices, an image-based fallback is implemented.
+	</description>
+	<author email="mtni@mms-dresden.de">Matthias Niederhausen</author>
+	<feature name="http://www.openajax.org/hub" required="true" xmlns:oa="http://www.openajax.org/hub">
+		<oa:topics>
+			<oa:topic />
+		</oa:topics>
+
+		<oa:subscriptions>
+			<oa:subscription oa:topic="http://ict-omelette.eu/topics/resource/webcam"/>
+		</oa:subscriptions>
+	</feature>
+	<tag lang="en">webcam</tag>
+	<tag lang="en">controllable</tag>
+	<tag lang="de">webcam</tag>
+	<tag lang="de">steuerbar</tag>
+	<category lang="en">Tools</category>
+	<category lang="en">Widgets</category>
+	<category lang="en">Security</category>
+</widget>

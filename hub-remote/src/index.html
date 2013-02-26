@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Remote Cam Control</title>
+    <style>
+    
+body {
+    font-family: Arial, Verdana, sans-serif;
+    margin:0;
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    background-color:black;
+    color:white;
+}
+
+.button {color:#DEDEDE;background:none;margin:1px;padding:0 5px;border:1px solid #DEDEDE;border-radius:3px;font-size:8pt;height:22px;text-align:center;cursor:pointer;}
+#c_5 {font-weight:bold}
+.button:hover {background-color: #555555;color:#DEDEDE;padding:0 5px;border:1px solid #DEDEDE;border-radius:3px;}
+.button:active {background-color: #555555;color:#DEDEDE;padding:0 5px;border:1px solid #DEDEDE;border-radius:3px;}
+
+#controls {position:absolute;left:0;bottom:0;right:0;height:25px;display:none;background-color:#333333;border-top:1px solid #444444;padding:0 1px;text-align:center}
+#camContainer {width:100%;top:0;bottom:26px;overflow:hidden;position:absolute;}
+#camera {position:absolute;top:0;left:0;display:none}
+.msg {position:absolute;top:0;left:0;width:100%;height:100%}
+.msg td {text-align:center;vertical-align:middle}
+#loading,#error {display:none}
+#cameraPicture {position:absolute;display:none;min-width:100%}
+#videolabel {position:absolute;bottom:25px;left:0;right:0;background-color:rgba(0,0,0,0.5);color:white;font-size:8pt;padding:2px 5px;display:none}
+    
+    </style>
+    <script type="text/javascript" src="libs/jquery-1.7.2.js"></script>
+    <script type="text/javascript" src="script/remotecam.js"></script>
+</head>
+
+<body>
+    <div id="camContainer">
+    	<iframe id="camera" width="640" height="480" src=""></iframe>
+    	<img id="cameraPicture" src="" alt="LiveCam"/>
+    </div>
+    
+    
+	<table class="msg" id="nocam">
+    	<tr><td><p id="nocam">No camera visuals available.<br/>Please select a live webcam to show.</p></td></tr>
+    </table>
+    <table class="msg" id="loading">
+    	<tr><td><img src="icons/preloader.gif" alt="Preload indicator" title="Loading..." width="80" height="12"/><br/>
+				Loading live feed...</td></tr>
+	</table>
+	<table class="msg" id="error">
+    	<tr><td>This feed is not available at the moment.<br/>Sorry =(</td></tr>
+	</table>
+    <div id="videolabel"></div>
+    <div id="controls">
+    	<input type="button" class="button" id="c_8" value="Up"/><input type="button" class="button" id="c_2" value="Down"/><input type="button" class="button" id="c_5" value="Center"/><input type="button" class="button" id="c_4" value="Left"/><input type="button" class="button" id="c_6" value="Right"/>
+
+	    <!-- 	
+	    	<tr>
+		    	<td><input type="button" class="button" id="c_7" value="&#9700;"/></td>
+		    	<td><input type="button" class="button" id="c_8" value="&#9650;"/></td>
+		    	<td><input type="button" class="button" id="c_9" value="&#9701;"/></td>
+	    	</tr>
+	    	<tr>
+		    	<td><input type="button" class="button" id="c_4" value="&#9664;"/></td>
+		    	<td><input type="button" class="button" id="c_5" value="&#9670;"/></td>
+		    	<td><input type="button" class="button" id="c_6" value="&#9654;"/></td>
+	    	</tr>
+	    	<tr>
+		    	<td><input type="button" class="button" id="c_1" value="&#9699;"/></td>
+		    	<td><input type="button" class="button" id="c_2" value="&#9660;"/></td>
+		    	<td><input type="button" class="button" id="c_3" value="&#9698;"/></td>
+	    	</tr>-->
+    </div>
+</body>
+</html>

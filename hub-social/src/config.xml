@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns="http://www.w3.org/ns/widgets" 
+	height="320" 
+	width="320"
+	id="http://mms.t-systems.de/widgets/socialfeeds" 
+	version="3.0"
+	viewmodes="windowed">
+	<name short="Social Feeds">Social Feeds</name>
+	<icon src="icons/feed80.png" width="80" height="80"></icon>
+	<icon src="icons/feed32.png" width="32" height="32"></icon>
+	<description>
+		This widget shows a list of messages, incoming from different social networks. Currently, only twitter is supported.
+	</description>
+	<access origin="http://api.twitter.com" />
+	<access origin="https://api.twitter.com" />
+	<access origin="http://search.twitter.com" />		
+	<author email="stefan.pietschmann@t-systems-mms.de">Stefan Pietschmann</author>
+	<!-- ### TAGS ### -->
+	<tag lang="en">social network</tag>
+  	<tag lang="en">twitter</tag>  
+  	<!-- ### CATEGORIES ### -->
+ 	<category lang="en">Feeds</category>
+  	<category lang="en">Messaging</category>
+  	<category lang="en">News</category>
+  	<category lang="en">Other</category>
+  	<category lang="en">Social</category>
+  	<category lang="en">Widgets</category>  	
+	<!-- ### PUB/SUB ### -->
+	<feature name="http://www.openajax.org/hub" xmlns:oa="http://www.openajax.org/hub">
+  		<oa:topics>
+			<oa:topic oa:name="http://ict-omelette.eu/topics/social/message"> 
+				<oa:schema oa:schemaType="http://json-schema.org/schema"
+				oa:src="schemas/message.json.schema"/>
+			</oa:topic>
+			<oa:topic oa:name="http://ict-omelette.eu/topics/social/messages">
+				<oa:schema oa:schemaType="http://json-schema.org/schema"
+				oa:src="schemas/messages.json.schema"/>
+			</oa:topic>
+			<oa:topic oa:name="http://ict-omelette.eu/topics/geo/circularArea">
+				<oa:schema oa:schemaType="http://json-schema.org/schema"
+				oa:src="schemas/circularArea.json.schema"/>
+			</oa:topic>
+			<oa:topic oa:name="http://ict-omelette.eu/topics/social/trendingTopic">
+				<oa:schema oa:schemaType="http://www.w3.org/2001/XMLSchema"
+	  				oa:simpleType="string"/>
+	  		</oa:topic>
+	   	</oa:topics>
+		<oa:publications>
+			<!-- publishes an updated message list upon new search by user, or incoming location -->
+			<oa:publication oa:topic="http://ict-omelette.eu/topics/social/messages">
+				<oa:trigger oa:type="user"/> 
+				<oa:trigger oa:type="topic" oa:topic="http://ict-omelette.eu/topics/geo/circularArea"/>
+			</oa:publication>
+			<!-- publishes a single message, if the user chooses so. -->
+			<oa:publication oa:topic="http://ict-omelette.eu/topics/social/message">
+				<oa:trigger oa:type="user"/> 
+			</oa:publication>			
+    	</oa:publications>
+	    <oa:subscriptions>
+	    	<!-- subscribes to an area for geo-filtering messages -->
+	    	<oa:subscription oa:topic="http://ict-omelette.eu/topics/geo/circularArea"/>
+	    	<!-- subscribes to a trending topic to be used as search term -->
+	    	<oa:subscription oa:topic="http://ict-omelette.eu/topics/social/trendingTopic"/>
+    	</oa:subscriptions>
+	</feature>
+</widget>

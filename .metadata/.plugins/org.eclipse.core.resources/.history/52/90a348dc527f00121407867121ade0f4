@@ -1,0 +1,18 @@
+// main.js - put your code here
+
+function registerOpenAjax()
+  {
+   try
+	 {
+	  hub.subscribe("http://ict-omelette.eu/topics/social/messages",showFeeds);
+	  hub.subscribe("http://ict-omelette.eu/topics/social/message",focusFeed);
+	  hub.subscribe("http://dev.ict-omelette.eu/iwc-topics-sap/vehicleposition",focusVehicle);
+	  hub.subscribe("http://ict-omelette.eu/topics/events",showEvents);
+	  hub.subscribe("http://ict-omelette.eu/topics/event",focusEvent);
+	 }
+   catch (exception)
+	 {
+	  console.log("Can't subscribe to OpenAjax hub ("+exception+"). Trying again in "+(WAITFORHUB/1000)+"s...");
+	  window.setTimeout("registerOpenAjax()",WAITFORHUB*=2);
+	 }
+  }

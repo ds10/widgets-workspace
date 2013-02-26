@@ -1,0 +1,7 @@
+// main.js - put your code here
+
+function genMessage(msg){
+	
+	console.dir(msg);
+	
+}

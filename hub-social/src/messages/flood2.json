@@ -1,0 +1,226 @@
+{
+	"completed_in": 0.051,
+	"max_id": 258840807807799296,
+	"max_id_str": "258840807807799296",
+	"next_page": "?page=2&max_id=258840807807799296&q=flood&include_entities=1",
+	"page": 1,
+	"query": "flood",
+	"refresh_url": "?since_id=258840807807799296&q=flood&include_entities=1",
+	"results": [
+		{
+			"created_at": "Thu, 18 Oct 2012 08:03:52 +0000",
+			"entities": {
+				"hashtags": [],
+				"urls": [],
+				"user_mentions": []
+			},
+			"from_user": "Ed359",
+			"from_user_id": 231921240,
+			"from_user_id_str": "231921240",
+			"from_user_name": "Edward Simmonds",
+			"geo": null,
+			"id": 258840807807799296,
+			"id_str": "258840807807799296",
+			"iso_language_code": "en",
+			"metadata": {
+				"result_type": "recent"
+			},
+			"profile_image_url": "http:\/\/a0.twimg.com\/profile_images\/1697191487\/045_normal.JPG",
+			"profile_image_url_https": "https:\/\/si0.twimg.com\/profile_images\/1697191487\/045_normal.JPG",
+			"source": "&lt;a href=&quot;http:\/\/blackberry.com\/twitter&quot;&gt;Twitter for BlackBerry\u00ae&lt;\/a&gt;",
+			"text": "Need to control this flood",
+			"to_user": null,
+			"to_user_id": 0,
+			"to_user_id_str": "0",
+			"to_user_name": null
+		}, {
+			"created_at": "Thu, 18 Oct 2012 08:02:36 +0000",
+			"entities": {
+				"hashtags": [],
+				"urls": [],
+				"user_mentions": []
+			},
+			"from_user": "horganp",
+			"from_user_id": 36556965,
+			"from_user_id_str": "36556965",
+			"from_user_name": "Peter Horgan",
+			"geo": null,
+			"id": 258840490282201088,
+			"id_str": "258840490282201088",
+			"iso_language_code": "en",
+			"metadata": {
+				"result_type": "recent"
+			},
+			"profile_image_url": "http:\/\/a0.twimg.com\/profile_images\/2218663467\/image_normal.jpg",
+			"profile_image_url_https": "https:\/\/si0.twimg.com\/profile_images\/2218663467\/image_normal.jpg",
+			"source": "&lt;a href=&quot;http:\/\/www.tweetdeck.com&quot;&gt;TweetDeck&lt;\/a&gt;",
+			"text": "High tide passed with few incidents at 'Blaues Wunder', any flood waters still on the Quays are beginning to recede.. What is it like in your area?",
+			"to_user": null,
+			"to_user_id": 0,
+			"to_user_id_str": "0",
+			"to_user_name": null
+		}, {
+			"created_at": "Thu, 18 Oct 2012 08:02:19 +0000",
+			"entities": {
+				"hashtags": [
+					{
+						"text": "fuckmemories",
+						"indices": [64, 77]
+					}
+				],
+				"urls": [],
+				"user_mentions": []
+			},
+			"from_user": "Britteni_Jane",
+			"from_user_id": 403852459,
+			"from_user_id_str": "403852459",
+			"from_user_name": "Britteni Pitchford\ue418",
+			"geo": null,
+			"id": 258840418173730816,
+			"id_str": "258840418173730816",
+			"iso_language_code": "en",
+			"metadata": {
+				"result_type": "recent"
+			},
+			"profile_image_url": "http:\/\/a0.twimg.com\/profile_images\/2636454055\/f821575057fb88db95494eba7317443f_normal.jpeg",
+			"profile_image_url_https": "https:\/\/si0.twimg.com\/profile_images\/2636454055\/f821575057fb88db95494eba7317443f_normal.jpeg",
+			"source": "&lt;a href=&quot;http:\/\/twitter.com\/download\/android&quot;&gt;Twitter for Android&lt;\/a&gt;",
+			"text": "Sitting at home - cannot leave the house anymore. Water all over the place! #noah",
+			"to_user": null,
+			"to_user_id": 0,
+			"to_user_id_str": "0",
+			"to_user_name": null
+		}, {
+			"created_at": "Thu, 18 Oct 2012 08:16:33 +0000",
+			"entities": {
+				"hashtags": [],
+				"urls": [
+					{
+						"url": "http:\/\/t.co\/ItDlAXxK",
+						"expanded_url": "http:\/\/1.usa.gov\/U7EKY3",
+						"display_url": "1.usa.gov\/U7EKY3",
+						"indices": [116, 136]
+					}
+				],
+				"user_mentions": []
+			},
+			"from_user": "MNRiverMankato",
+			"from_user_id": 196187952,
+			"from_user_id_str": "196187952",
+			"from_user_name": "MN River @ Mankato",
+			"geo": null,
+			"id": 258844001363443712,
+			"id_str": "258844001363443712",
+			"iso_language_code": "en",
+			"metadata": {
+				"result_type": "recent"
+			},
+			"profile_image_url": "http:\/\/a0.twimg.com\/sticky\/default_profile_images\/default_profile_2_normal.png",
+			"profile_image_url_https": "https:\/\/si0.twimg.com\/sticky\/default_profile_images\/default_profile_2_normal.png",
+			"source": "&lt;a href=&quot;http:\/\/twitterfeed.com&quot;&gt;twitterfeed&lt;\/a&gt;",
+			"text": "Observation - Theaterplatz (Dresden): Flood Stage: 7.82m, Latest Observation: 0.84 ft\nObs... http:\/\/t.co\/ItDlAXxK",
+			"to_user": null,
+			"to_user_id": 0,
+			"to_user_id_str": "0",
+			"to_user_name": null
+		}, {
+			"created_at": "Thu, 18 Oct 2012 08:16:04 +0000",
+			"entities": {
+				"hashtags": [],
+				"urls": [
+					{
+						"url": "http:\/\/t.co\/nwiWo3pL",
+						"expanded_url": "http:\/\/dlvr.it\/2L9Rqw",
+						"display_url": "dlvr.it\/2L9Rqw",
+						"indices": [120, 140]
+					}
+				],
+				"user_mentions": []
+			},
+			"from_user": "StormWchAmerica",
+			"from_user_id": 636484224,
+			"from_user_id_str": "636484224",
+			"from_user_name": "Storm Watch America",
+			"geo": null,
+			"id": 258843877673406464,
+			"id_str": "258843877673406464",
+			"iso_language_code": "en",
+			"metadata": {
+				"result_type": "recent"
+			},
+			"profile_image_url": "http:\/\/a0.twimg.com\/profile_images\/2400701885\/Tornado3-005_normal.jpg",
+			"profile_image_url_https": "https:\/\/si0.twimg.com\/profile_images\/2400701885\/Tornado3-005_normal.jpg",
+			"source": "&lt;a href=&quot;http:\/\/dlvr.it&quot;&gt;dlvr.it&lt;\/a&gt;",
+			"text": "(DD) THE NATIONAL WEATHER SERVICE HAS ISSUED A * SMALL STREAM FLOOD ADVISORY FOR... DRESDEN CENTRAL... http:\/\/t.co\/nwiWo3pL",
+			"to_user": null,
+			"to_user_id": 0,
+			"to_user_id_str": "0",
+			"to_user_name": null
+		}, {
+			"created_at": "Thu, 18 Oct 2012 08:15:42 +0000",
+			"entities": {
+				"hashtags": [],
+				"urls": [],
+				"user_mentions": [
+					{
+						"screen_name": "Mareebeeaar",
+						"name": "Maria Bedolla",
+						"id": 338188417,
+						"id_str": "338188417",
+						"indices": [0, 12]
+					}
+				]
+			},
+			"from_user": "tyhuso",
+			"from_user_id": 474296616,
+			"from_user_id_str": "474296616",
+			"from_user_name": "Tyler Huso",
+			"geo": null,
+			"id": 258843788355698688,
+			"id_str": "258843788355698688",
+			"iso_language_code": "en",
+			"metadata": {
+				"result_type": "recent"
+			},
+			"profile_image_url": "http:\/\/a0.twimg.com\/profile_images\/2289102026\/image_normal.jpg",
+			"profile_image_url_https": "https:\/\/si0.twimg.com\/profile_images\/2289102026\/image_normal.jpg",
+			"source": "&lt;a href=&quot;http:\/\/twitter.com\/download\/iphone&quot;&gt;Twitter for iPhone&lt;\/a&gt;",
+			"text": "@Mareebeeaar well I was trying to flood it with my two water spills!",
+			"to_user": "Mareebeeaar",
+			"to_user_id": 338188417,
+			"to_user_id_str": "338188417",
+			"to_user_name": "Maria Bedolla",
+			"in_reply_to_status_id": 258839579749138432,
+			"in_reply_to_status_id_str": "258839579749138432"
+		}, {
+			"created_at": "Thu, 18 Oct 2012 08:54:21 +0000",
+			"entities": {
+				"hashtags": [],
+				"urls": [],
+				"user_mentions": []
+			},
+			"from_user": "SurveySays1481",
+			"from_user_id": 871964298,
+			"from_user_id_str": "871964298",
+			"from_user_name": "Survey Downline",
+			"geo": null,
+			"id": 258853514460160000,
+			"id_str": "258853514460160000",
+			"iso_language_code": "en",
+			"metadata": {
+				"result_type": "recent"
+			},
+			"profile_image_url": "http:\/\/a0.twimg.com\/profile_images\/2731080611\/cec2dc33a8bab1a3a16dd1d35c31163a_normal.jpeg",
+			"profile_image_url_https": "https:\/\/si0.twimg.com\/profile_images\/2731080611\/cec2dc33a8bab1a3a16dd1d35c31163a_normal.jpeg",
+			"source": "&lt;a href=&quot;http:\/\/twitter.com\/&quot;&gt;web&lt;\/a&gt;",
+			"text": "No individual raindrop considers itself responsible for the flood",
+			"to_user": null,
+			"to_user_id": 0,
+			"to_user_id_str": "0",
+			"to_user_name": null
+		}
+	],
+	"results_per_page": 15,
+	"since_id": 0,
+	"since_id_str": "0"
+}

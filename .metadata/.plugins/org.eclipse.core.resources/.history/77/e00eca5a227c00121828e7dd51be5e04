@@ -1,0 +1,16 @@
+/* put your styles here */
+
+body {
+    font-size: 0.9em;
+    font-family: Arial, Verdana, sans-serif;
+}
+
+.node {
+  stroke: #fff;
+  stroke-width: 1.5px;
+}
+
+.link {
+  stroke: #999;
+  stroke-opacity: .6;
+}
