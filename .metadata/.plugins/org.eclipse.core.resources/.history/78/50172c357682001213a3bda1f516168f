@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Controller</title>
+
+    <link href="style/main.css" rel="stylesheet" media="all"/>
+    <style type="text/css">
+    </style>
+
+	<script type="text/javascript" src="script/jquery-1.9.1.min.js"></script>
+    <script src="script/main.js"></script>
+    	
+</head>
+
+<body>
+ 	
+</body>
+</html>

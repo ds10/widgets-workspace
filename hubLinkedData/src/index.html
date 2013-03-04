@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Piechart of linked data</title>
+	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+     <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+		google.load('visualization', '1', {packages: ['table','barchart','columnchart','linechart','piechart']});
+    </script>
+    
+  </head>
+  
+     <script type="text/javascript">
+	 var visualization;
+	 var query = new google.visualization.Query('http://data-gov.tw.rpi.edu/ws/sparqlproxy.php?query=SELECT+%3Fhusband++%28count%28*%29+AS+%3Fcnt%29++WHERE%7B%0D%0A%0D%0A+++++%3Fhusband+%3Fc+category%3ACoronation_Street_characters+%3B%0D%0A%0D%0A+++++dbpprop%3Awife+%3Fwife+.%0D%0A%0D%0A%7D%0D%0A%0D%0AGROUP+BY+%3Fhusband%0D%0AORDER+BY+DESC+%28%3Fcnt+%29&output=gvds&callback=&tqx=&default-graph-uri=&service-uri=http%3A%2F%2Fdbpedia.org%2Fsparql');
+	 query.send(handleQueryResponse);
+	 
+	 
+	 function handleQueryResponse(response){
+	 	var data = response.getDataTable();
+	      visualization = new google.visualization.PieChart(document.getElementById('visualization_PieChart'));
+	      visualization.draw(data, {height:500, pieMinimalAngle: 1,is3D: true});
+	 
+	 }
+	
+	
+  </script>
+  <body>
+    <div id="visualization_PieChart" style="height:520px"></div>
+  </body>
+</html>

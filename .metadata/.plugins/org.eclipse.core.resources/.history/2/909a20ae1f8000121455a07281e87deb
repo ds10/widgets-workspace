@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>{widgetname}</title>
+
+
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+     
+    	var data = new google.visualization.Query('http://data-gov.tw.rpi.edu/ws/sparqlproxy.php?query=SELECT+%3Fhusband++%28count%28*%29+AS+%3Fcnt%29++WHERE%7B%0D%0A%0D%0A+++++%3Fhusband+%3Fc+category%3ACoronation_Street_characters+%3B%0D%0A%0D%0A+++++dbpprop%3Awife+%3Fwife+.%0D%0A%0D%0A%7D%0D%0A%0D%0AGROUP+BY+%3Fhusband%0D%0AORDER+BY+DESC+%28%3Fcnt+%29&output=gvds&callback=&tqx=&default-graph-uri=&service-uri=http%3A%2F%2Fdbpedia.org%2Fsparql');
+        //var data = " "
+        
+        var options = {
+          title: 'My Daily Activities'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="chart_div" style="width: 900px; height: 500px;"></div>
+  </body>
+</html>

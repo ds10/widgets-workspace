@@ -32,7 +32,8 @@ function registerOpenAjax()
 	 }
   }
 
-function doSomething(msg)
+function doSomething(msg,publisherData)
 {
 	console.log(msg);
+	console.log(publisherData);
 }

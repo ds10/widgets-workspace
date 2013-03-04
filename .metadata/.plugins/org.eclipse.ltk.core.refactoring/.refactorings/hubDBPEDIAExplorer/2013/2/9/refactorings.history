@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring accessors="true" comment="Delete 2 element(s) from project &apos;hubDBPEDIAExplorer&apos;&#x0A;- Original project: &apos;hubDBPEDIAExplorer&apos;&#x0A;- Original elements:&#x0A;     springy.js&#x0A;     springyui.js" description="Delete elements" element1="src/style/springy.js" element2="src/style/springyui.js" elements="0" flags="589830" id="org.eclipse.wst.jsdt.ui.delete" resources="2" stamp="1361889195875" subPackages="false" version="1.0"/>
+</session>

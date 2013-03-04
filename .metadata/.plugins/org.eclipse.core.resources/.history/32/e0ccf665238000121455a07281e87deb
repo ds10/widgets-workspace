@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>{widgetname}</title>
+
+    <link href="style/main.css" rel="stylesheet" media="all"/>
+
+    <style type="text/css">
+    </style>
+
+    <script src="script/main.js"></script>
+</head>
+
+<body>
+<form Method="POST" Action="http://data-gov.tw.rpi.edu/ws/sparqlproxy.php" >   
+<textarea name="query" cols=80 rows="10" />
+SELECT ?husband  (count(*) AS ?cnt)  WHERE{
+
+     ?husband ?c category:Coronation_Street_characters ;
+
+     dbpprop:wife ?wife .
+
+}
+
+GROUP BY ?husband
+ORDER BY DESC (?cnt )
+</textarea>
+    <input value="query" type="submit" /><br />
+</form>
+    
+</body>
+</html>

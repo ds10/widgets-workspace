@@ -1,0 +1,21 @@
+// main.js - put your code here
+ $(document).ready(function() {
+   // do stuff when DOM is ready
+	 
+	 $("a").click(function() {
+	     alert("Hello world!");
+	   });
+	 
+
+	 $.ajax({
+         url: 'http://crunch.kmi.open.ac.uk/people/~dsherlock/services/%20JSONexample.r',
+         dataType: 'jsonp',
+         success: function(dataWeGotViaJsonp){
+        	 console.log(dataWeGotViaJsonp)
+              }
+           
+         }
+     });
+
+ 
+ })
